@@ -1,31 +1,17 @@
 import Link from "next/link";
 import React, { FC } from "react";
 
-enum ButtonType {
-  Button = "button",
-  Submit = "submit",
-  Reset = "reset",
-}
-
-enum ButtonVariant {
-  Primary = "primary",
-  Success = "success",
-  Warning = "warning",
-  Error = "error",
-  Disabled = "disabled",
-}
-
 interface ButtonProps {
   children?: React.ReactNode;
-  type?: ButtonType;
+  type?: "button" | "submit" | "reset";
   className?: string;
   href?: string;
-  variant?: ButtonVariant;
+  variant?: "primary" | "success" | "warning" | "error" | "disabled";
 }
 
 const Button: FC<ButtonProps> = ({
   children,
-  type = ButtonType.Button,
+  type = "button",
   className = "nes-btn",
   href,
   variant,
