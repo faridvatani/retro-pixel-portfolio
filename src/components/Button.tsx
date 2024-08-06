@@ -18,7 +18,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   const variantClass = variant ? `is-${variant}` : "";
-  const combinedClassName = `${className} ${variantClass}`.trim();
+  const combinedClassName = `nes-btn ${className} ${variantClass}`.trim();
 
   if (href) {
     return (
