@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { FC } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
   className?: string;
@@ -15,6 +15,7 @@ const Button: FC<ButtonProps> = ({
   className = "nes-btn",
   href,
   variant,
+  ...props
 }) => {
   const variantClass = variant ? `is-${variant}` : "";
   const combinedClassName = `${className} ${variantClass}`.trim();
@@ -28,7 +29,7 @@ const Button: FC<ButtonProps> = ({
   }
 
   return (
-    <button type={type} className={combinedClassName}>
+    <button type={type} className={combinedClassName} {...props}>
       {children}
     </button>
   );
