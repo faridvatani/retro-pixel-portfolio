@@ -9,9 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "dark-pixel":
+          "url('/bg.webp'), linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(15, 17, 23, 1))",
+      },
+      keyframes: {
+        moveBg: {
+          "0%": { backgroundPosition: "100% 100%" },
+          "100%": { backgroundPosition: "0% 0%" },
+        },
+      },
+      animation: {
+        moveBg: "moveBg 60s linear infinite",
       },
     },
   },

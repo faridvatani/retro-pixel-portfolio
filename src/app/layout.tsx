@@ -17,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={pressStart2P.className}>{children}</body>
+      <body
+        className={`${pressStart2P.className} bg-dark-pixel animate-moveBg`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
