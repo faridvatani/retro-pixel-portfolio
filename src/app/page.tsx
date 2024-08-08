@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import Dialog from "@/components/Dialog";
 import TextSpan from "@/components/TextSpan";
 import { Wrapper } from "@/components/Wrapper";
+import List from "@/components/List";
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -15,6 +16,20 @@ export default function Home() {
   const handleCloseDialog = () => {
     setIsDialogOpen(false);
   };
+
+  const skillList = [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Git",
+  ];
   return (
     <>
       <Dialog
@@ -46,17 +61,7 @@ export default function Home() {
               Here are some of the technologies I&apos;ve been working with
               recently:
             </TextSpan>
-            <ul>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>PostgreSQL</li>
-              <li>MySQL</li>
-              <li>MongoDB</li>
-              <li>Git</li>
-            </ul>
+            <List items={skillList} type="circle" />
           </div>
           <div className="mt-10">
             <TextSpan>
