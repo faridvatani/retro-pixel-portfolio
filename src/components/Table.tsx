@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-interface TableProps {
+interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   header: string[];
   data: any[];
   dark?: boolean;

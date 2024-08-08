@@ -6,6 +6,7 @@ import TextSpan from "@/components/TextSpan";
 import { Wrapper } from "@/components/Wrapper";
 import List from "@/components/List";
 import Table from "@/components/Table";
+import Progress from "@/components/Progress";
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -84,6 +85,14 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <Table header={tableHeaders} data={tableData} />
+          </div>
+          <div className="mt-10">
+            <Progress value={90} max={100} />
+            <Progress variant="primary" value={80} max={100} />
+            <Progress variant="success" value={50} max={100} />
+            <Progress variant="warning" value={30} max={100} />
+            <Progress variant="error" value={10} max={100} />
+            <Progress variant="pattern" value={50} max={100} />
           </div>
           <div className="mt-10">
             <TextSpan>

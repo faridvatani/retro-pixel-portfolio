@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-interface ListProps {
+interface ListProps extends React.HTMLAttributes<HTMLUListElement> {
   items: string[];
   type?: "disc" | "circle";
   className?: string;

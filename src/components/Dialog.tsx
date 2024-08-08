@@ -1,6 +1,6 @@
 import React from "react";
 
-interface DialogProps {
+interface DialogProps extends React.HTMLAttributes<HTMLDialogElement> {
   isOpen: boolean;
   className?: string;
   dark?: boolean;
