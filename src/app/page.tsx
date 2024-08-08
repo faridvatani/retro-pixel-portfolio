@@ -5,6 +5,7 @@ import Dialog from "@/components/Dialog";
 import TextSpan from "@/components/TextSpan";
 import { Wrapper } from "@/components/Wrapper";
 import List from "@/components/List";
+import Table from "@/components/Table";
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -30,6 +31,24 @@ export default function Home() {
     "Bootstrap",
     "Git",
   ];
+
+  const tableHeaders = ["Name", "Email", "Phone", "Location"];
+
+  const tableData = [
+    {
+      Name: "John Doe",
+      Email: "johndoe@gmail.com",
+      Phone: "+1234567890",
+      Location: "New York, USA",
+    },
+    {
+      Name: "Jane Doe",
+      Email: "janedoe@gmail.com",
+      Phone: "+0987654321",
+      Location: "California, USA",
+    },
+  ];
+
   return (
     <>
       <Dialog
@@ -62,6 +81,9 @@ export default function Home() {
               recently:
             </TextSpan>
             <List items={skillList} type="circle" />
+          </div>
+          <div className="mt-10">
+            <Table header={tableHeaders} data={tableData} />
           </div>
           <div className="mt-10">
             <TextSpan>
