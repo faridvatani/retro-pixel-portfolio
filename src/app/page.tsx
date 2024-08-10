@@ -7,6 +7,7 @@ import { Wrapper } from "@/components/Wrapper";
 import List from "@/components/List";
 import Table from "@/components/Table";
 import Progress from "@/components/Progress";
+import Balloon from "@/components/Balloon";
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -94,6 +95,9 @@ export default function Home() {
             <Progress variant="error" value={10} max={100} />
             <Progress variant="pattern" value={50} max={100} />
           </div>
+          <Balloon from="right">
+              <p>Good morning. Thou hast had a good night&opas;s sleep, I hope.</p>
+            </Balloon>
           <div className="mt-10">
             <TextSpan>
               Here are some of the technologies I&apos;m currently learning:
