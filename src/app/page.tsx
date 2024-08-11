@@ -8,6 +8,7 @@ import List from "@/components/List";
 import Table from "@/components/Table";
 import Progress from "@/components/Progress";
 import Balloon from "@/components/Balloon";
+import Badge from "@/components/Badge";
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -32,23 +33,6 @@ export default function Home() {
     "Tailwind CSS",
     "Bootstrap",
     "Git",
-  ];
-
-  const tableHeaders = ["Name", "Email", "Phone", "Location"];
-
-  const tableData = [
-    {
-      Name: "John Doe",
-      Email: "johndoe@gmail.com",
-      Phone: "+1234567890",
-      Location: "New York, USA",
-    },
-    {
-      Name: "Jane Doe",
-      Email: "janedoe@gmail.com",
-      Phone: "+0987654321",
-      Location: "California, USA",
-    },
   ];
 
   return (
@@ -83,30 +67,6 @@ export default function Home() {
               recently:
             </TextSpan>
             <List items={skillList} type="circle" />
-          </div>
-          <div className="mt-10">
-            <Table header={tableHeaders} data={tableData} />
-          </div>
-          <div className="mt-10">
-            <Progress value={90} max={100} />
-            <Progress variant="primary" value={80} max={100} />
-            <Progress variant="success" value={50} max={100} />
-            <Progress variant="warning" value={30} max={100} />
-            <Progress variant="error" value={10} max={100} />
-            <Progress variant="pattern" value={50} max={100} />
-          </div>
-          <Balloon from="right">
-              <p>Good morning. Thou hast had a good night&opas;s sleep, I hope.</p>
-            </Balloon>
-          <div className="mt-10">
-            <TextSpan>
-              Here are some of the technologies I&apos;m currently learning:
-            </TextSpan>
-            <ul>
-              <li>TypeScript</li>
-              <li>GraphQL</li>
-              <li>Prisma</li>
-            </ul>
           </div>
           <div className="mt-10 w-fit flex gap-4 justify-center">
             <Button onClick={handleOpenDialog}>Resume</Button>
