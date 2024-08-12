@@ -13,7 +13,7 @@ const Textarea: FC<TextareaProps> = ({ id, label, className, ...props }) => {
       <label htmlFor={id}>{label}</label>
       <textarea
         id={id}
-        className={className || "nes-textarea"}
+        className={`nes-textarea ${className}`}
         {...props}
       ></textarea>
     </div>

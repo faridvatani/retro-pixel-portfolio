@@ -1,14 +1,13 @@
 import Image from "next/image";
-import React, { FC } from "react";
+import { FC } from "react";
 
-interface AvatarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface AvatarProps {
   src: string;
   alt: string;
-  size?: "small" | "medium" | "large";
+  size?: string;
   rounded?: boolean;
   className?: string;
-  width?: number | string;
-  height?: number | string;
+  style?: React.CSSProperties;
 }
 
 const Avatar: FC<AvatarProps> = ({
@@ -16,26 +15,21 @@ const Avatar: FC<AvatarProps> = ({
   alt,
   size,
   rounded,
-  className,
-  width,
-  height,
+  className = "",
+  style,
   ...props
 }) => {
   const sizeClass = size ? `is-${size}` : "";
   const roundedClass = rounded ? "is-rounded" : "";
-  // Todo: Add Utility function to convert string to number
-  const numericWidth = typeof width === "string" ? parseInt(width, 10) : width;
-  const numericHeight =
-    typeof height === "string" ? parseInt(height, 10) : height;
 
   return (
     <Image
       src={src}
       alt={alt}
-      width={numericWidth}
-      height={numericHeight}
-      className={`nes-avatar ${sizeClass} ${roundedClass} ${className || ""}`}
-      style={{ imageRendering: "pixelated" }}
+      width={100}
+      height={100}
+      className={`nes-avatar ${sizeClass} ${roundedClass} ${className}`}
+      style={{ imageRendering: "pixelated", ...style }}
       {...props}
     />
   );

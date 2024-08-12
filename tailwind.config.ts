@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "dark-pixel":
-          "url('/bg.webp'), linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(15, 17, 23, 1))",
+          "url('/assets/images/bg.webp'), linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(15, 17, 23, 1))",
       },
       keyframes: {
         moveBg: {

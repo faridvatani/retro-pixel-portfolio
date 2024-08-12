@@ -6,11 +6,12 @@ import TextSpan from "@/components/TextSpan";
 import { Wrapper } from "@/components/Wrapper";
 import List from "@/components/List";
 import Table from "@/components/Table";
-import Progress from "@/components/Progress";
-import Balloon from "@/components/Balloon";
-import Badge from "@/components/Badge";
+import Icon from "@/components/Icon";
+import Avatar from "@/components/Avatar";
+import Input from "@/components/Input";
+import Textarea from "@/components/Textarea";
 
-export default function Home() {
+const Portfolio = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleOpenDialog = () => {
@@ -35,44 +36,109 @@ export default function Home() {
     "Git",
   ];
 
+  const projectData = [
+    {
+      name: "Project A",
+      description: "Description of Project A",
+      status: "Completed",
+    },
+    {
+      name: "Project B",
+      description: "Description of Project B",
+      status: "In Progress",
+    },
+    {
+      name: "Project C",
+      description: "Description of Project C",
+      status: "Planned",
+    },
+  ];
+
   return (
     <>
+      <header className="bg-dark-pixel animate-moveBg h-64 flex items-center justify-center text-white">
+        <h1 className="text-4xl font-bold">My Portfolio</h1>
+      </header>
+      <main className="p-8">
+        <Wrapper className="mb-10">
+          <TextSpan className="text-2xl font-semibold mb-4">About Me</TextSpan>
+          <p className="text-lg mt-5">
+            I am a passionate developer with experience in various technologies.
+          </p>
+        </Wrapper>
+        <Wrapper className="mb-10">
+          <TextSpan className="text-2xl font-semibold mb-4">
+            Technologies I&apos;ve been working with recently:
+          </TextSpan>
+          <div className="grid grid-cols-2 gap-4 mt-5 px-5">
+            <List items={skillList} type="circle" />
+          </div>
+        </Wrapper>
+        <Wrapper className="mb-10">
+          <TextSpan className="text-2xl font-semibold mb-4">
+            Recent Projects:
+          </TextSpan>
+          <div className="nes-table-responsive mt-5">
+            <Table
+              header={["Name", "Description", "Status"]}
+              data={projectData}
+              className=""
+            />
+          </div>
+        </Wrapper>
+        <div className="flex justify-center gap-4">
+          <Button variant="primary" onClick={handleOpenDialog}>
+            Contact Me
+          </Button>
+          <Button>Download CV</Button>
+        </div>
+      </main>
+      <footer className="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+      </footer>
       <Dialog
         isOpen={isDialogOpen}
         onClose={handleCloseDialog}
         closeOnOverlayClick
         rounded
+        className="max-w-lg"
       >
-        <p>Are you sure you want to proceed?</p>
-        <Button onClick={handleCloseDialog}>Close</Button>
+        <div className="flex justify-between items-center">
+          <TextSpan className="text-2xl font-semibold">Contact Me</TextSpan>
+          <Button onClick={handleCloseDialog}>
+            <Icon type="close" size="small"></Icon>
+          </Button>
+        </div>
+        <p className="mt-4 text-pretty text-sm">
+          If you have any questions or would like to get in touch, please feel
+          free to send me a message using the form below.
+        </p>
+        <form className="mt-4">
+          <Input
+            id="name"
+            label="Name"
+            placeholder="Your Name"
+            className="mb-4"
+          />
+          <Input
+            id="email"
+            label="Email"
+            placeholder="Your Email"
+            className="mb-4"
+          />
+          <Textarea
+            id="message"
+            label="Message"
+            placeholder="Your Message"
+            className="mb-4"
+          />
+          <Button variant="primary" type="submit" className="mt-5">
+            Send Message
+          </Button>
+        </form>
       </Dialog>
-      <main className="flex min-h-screen flex-col items-center justify-start py-24 px-52">
-        <Wrapper title="My Portfolio" className="w-full bg-white">
-          <TextSpan>
-            Hi, I&apos;m a software developer. I&apos;m passionate about
-            building web applications and solving problems. I&apos;m currently
-            learning about TypeScript, React, and Node.js.
-          </TextSpan>
-          <TextSpan>
-            I&apos;m also interested in learning more about cloud computing and
-            serverless technologies.
-          </TextSpan>
-          <TextSpan>
-            I&apos;m currently looking for opportunities to work as a software
-            developer.
-          </TextSpan>
-          <div className="mt-10">
-            <TextSpan>
-              Here are some of the technologies I&apos;ve been working with
-              recently:
-            </TextSpan>
-            <List items={skillList} type="circle" />
-          </div>
-          <div className="mt-10 w-fit flex gap-4 justify-center">
-            <Button onClick={handleOpenDialog}>Resume</Button>
-          </div>
-        </Wrapper>
-      </main>
     </>
   );
-}
+};
+
+export default Portfolio;
