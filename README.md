@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Retro Pixel Portfolio
+
+<img src="Screenshot.png" alt="Retro Pixel Portfolio" />
+
+Welcome to the Retro Pixel Portfolio! This one-of-a-kind developer portfolio is built with Next.js and styled using NES.css to evoke a nostalgic, pixel art aesthetic. Ideal for developers aiming to present their projects with a retro gaming flair, this template merges contemporary web development techniques with a charming 8-bit design. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Features
+
+- Pixel art style
+- NES.css styling
+- Responsive design
 
 ## Getting Started
 
