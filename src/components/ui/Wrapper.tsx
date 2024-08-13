@@ -29,9 +29,9 @@ export const Wrapper: FC<WrapperProps> = ({
     .join(" ");
 
   return (
-    <div className={containerClasses}>
+    <section className={containerClasses}>
       {title && <p className="title">{title}</p>}
       {children}
-    </div>
+    </section>
   );
 };
