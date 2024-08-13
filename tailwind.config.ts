@@ -17,9 +17,14 @@ const config: Config = {
           "0%": { backgroundPosition: "100% 100%" },
           "100%": { backgroundPosition: "0% 0%" },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         moveBg: "moveBg 60s linear infinite",
+        fadeIn: "fadeIn 2s ease-in-out",
       },
     },
   },

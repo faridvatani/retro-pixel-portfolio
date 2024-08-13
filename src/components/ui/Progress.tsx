@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 
+type Variant = "primary" | "success" | "warning" | "error" | "pattern";
+
 interface ProgressProps
   extends React.ProgressHTMLAttributes<HTMLProgressElement> {
-  variant?: "primary" | "success" | "warning" | "error" | "pattern";
+  variant?: Variant;
   className?: string;
 }
 
